@@ -1,0 +1,33 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Auto-generated VS/VSCode project files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Unity asset meta data
+*.pidb.meta
+*.asset.meta
+
+# Crash Reports
+sysinfo.txt
+
+# TextMeshPro
+[Tt]ext[Mm]esh[Pp]ro/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
