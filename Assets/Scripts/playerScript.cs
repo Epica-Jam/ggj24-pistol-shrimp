@@ -21,6 +21,14 @@ public class playerScript : MonoBehaviour
     private float cargaMax = 2f; // carga maxima posible
     private float tamMax = 3f; // tamaño maximo de la burbuja cargada
 
+    // cooldowns
+    [SerializeField]
+    private float tiempoEntreDisparosLigero = 0.25f; // Tiempo mínimo entre disparos ligeros
+    [SerializeField]
+    private float tiempoEntreDisparosCargado = 1.5f; // Tiempo mínimo entre disparos cargados
+    private float tiempoUltimoDisparoLigero = -Mathf.Infinity;
+    private float tiempoUltimoDisparoCargado = -Mathf.Infinity;
+
     // referencias ataque
 
     [SerializeField]
@@ -29,12 +37,18 @@ public class playerScript : MonoBehaviour
     private GameObject burbuCprefab; // Prefab de la burbuja chica
     [SerializeField]
     private GameObject burbuGprefab; // Prefab de la burbuja grande
+    private float tiempoOriginalDisparoLigero; // Para restaurar tiempos originales
+    private float tiempoOriginalDisparoCargado;
 
     // Start is called before the first frame update
     void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
         player_rb.gravityScale = gravedad;
+
+        // Guardar los tiempos originales porsia
+        tiempoOriginalDisparoLigero = tiempoEntreDisparosLigero;
+        tiempoOriginalDisparoCargado = tiempoEntreDisparosCargado;
     }
 
     // Update is called once per frame
@@ -44,11 +58,12 @@ public class playerScript : MonoBehaviour
 
         // Ataques
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) // Disparo ligero
+        if (Input.GetKeyDown(KeyCode.Mouse0) && PuedeDispararLigero()) // Disparo ligero
         {
             burbuChica();
+            tiempoUltimoDisparoLigero = Time.time;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1)) // Disparo cargado, deteccion de que se empezo a cargar
+        if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
         {
             cargando = true;
             tiempoCarga = 0f;
@@ -69,6 +84,7 @@ public class playerScript : MonoBehaviour
         {
             cargando = false;
             burbuGrande();
+            tiempoUltimoDisparoCargado = Time.time;
         }
 
         // Salto
@@ -132,5 +148,31 @@ public class playerScript : MonoBehaviour
         }
     }
 
-    
+        // Métodos para verificar si se puede disparar
+    bool PuedeDispararLigero()
+    {
+        return Time.time >= tiempoUltimoDisparoLigero + tiempoEntreDisparosLigero;
+    }
+
+    bool PuedeDispararCargado()
+    {
+        return Time.time >= tiempoUltimoDisparoCargado + tiempoEntreDisparosCargado;
+    }
+
+    // Métodos públicos para modificar tiempos de disparo
+    public void ModificarTiempoDisparoLigero(float nuevoTiempo)
+    {
+        tiempoEntreDisparosLigero = nuevoTiempo;
+    }
+
+    public void ModificarTiempoDisparoCargado(float nuevoTiempo)
+    {
+        tiempoEntreDisparosCargado = nuevoTiempo;
+    }
+
+    public void RestaurarTiemposOriginales()
+    {
+        tiempoEntreDisparosLigero = tiempoOriginalDisparoLigero;
+        tiempoEntreDisparosCargado = tiempoOriginalDisparoCargado;
+    }
 }

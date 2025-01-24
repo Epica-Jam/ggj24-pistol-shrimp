@@ -256,6 +256,8 @@ MonoBehaviour:
   gravedadFAST: 7
   maxCaida: -3
   tiempoCarga: 0
+  tiempoEntreDisparosLigero: 0.25
+  tiempoEntreDisparosCargado: 1.5
   pistola: {fileID: 1536458553}
   burbuCprefab: {fileID: 8911127080341655968, guid: d8e4a5aaab6a93743a0dcb1ef456aa7d, type: 3}
   burbuGprefab: {fileID: 1978541748549156090, guid: 8f821cdc1a0ff6b4d82b7ecab28138f0, type: 3}
@@ -581,10 +583,10 @@ MonoBehaviour:
   spawnXPos: 10
   minYPos: -4
   maxYPos: 4
-  intervSpawnE: 3
-  intervSpawnO: 4
-  intervMinPower: 8
-  intervMaxPower: 12
+  intervaloSpawnEnemigos: 3
+  intervaloSpawnObjetos: 4
+  intervaloMinPowerup: 8
+  intervaloMaxPowerup: 12
 --- !u!1 &1536458552
 GameObject:
   m_ObjectHideFlags: 0
