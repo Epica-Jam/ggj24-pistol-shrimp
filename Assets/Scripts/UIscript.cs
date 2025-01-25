@@ -19,6 +19,9 @@ public class UIscript : MonoBehaviour
     private SpriteRenderer sprite3;
     [SerializeField]
     private Sprite _vidaVacia;
+
+    [SerializeField]
+    private SpriteRenderer _gameOver;
     
     // Start is called before the first frame update
     void Start()
@@ -56,6 +59,7 @@ public class UIscript : MonoBehaviour
             sprite3.sprite = _vidaVacia;
             sprite2.sprite = _vidaVacia;
             sprite1.sprite = _vidaVacia;
+            _gameOver.enabled = true;
         }
     }
 }
