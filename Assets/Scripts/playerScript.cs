@@ -36,7 +36,7 @@ public class playerScript : MonoBehaviour
 
     // cooldowns
     [SerializeField]
-    private float tiempoEntreDisparosLigero = 0.2f; // Tiempo mínimo entre disparos ligeros
+    private float tiempoEntreDisparosLigero = 0.5f; // Tiempo mínimo entre disparos ligeros
     [SerializeField]
     private float tiempoEntreDisparosCargado = 1.5f; // Tiempo mínimo entre disparos cargados
     private float tiempoUltimoDisparoLigero = -Mathf.Infinity;
@@ -91,12 +91,13 @@ public class playerScript : MonoBehaviour
     void Update()
     {
         Movimiento(); // movimiento :)
+        UpdatePowerUps();
 
         // Ataques
         if (powerUps.Any(p => p.m_type == PowerUpType.AutoShoot) && PuedeDispararLigero())
         {
             burbuChica();
-            tiempoOriginalDisparoLigero = Time.time;
+            tiempoUltimoDisparoLigero = Time.time;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && PuedeDispararLigero()) // Disparo ligero
         {
@@ -160,6 +161,7 @@ public class playerScript : MonoBehaviour
         }
 
         suavizarCaida();
+
     }
 
     void Movimiento()
@@ -234,21 +236,23 @@ public class playerScript : MonoBehaviour
 
     public void AddPowerUp(PowerUp pup)
     {
+        pup.SetActive(true);
         powerUps.Add(pup);
     }
-    private void RemovePowerUp(PowerUp powerUp)
+    private void RemoveInactivePowerups()
     {
-        if (powerUps.Contains(powerUp)) powerUps.Remove(powerUp);
+        foreach (PowerUp powerUp in powerUps)
+            if (powerUps.Contains(powerUp) && !powerUp.m_active) powerUps.Remove(powerUp);
     }
 
     private void UpdatePowerUps()
     {
+        powerUps.RemoveAll(pup => !pup.m_active);
         foreach (PowerUp pup in powerUps)
         {
-            if (pup.GetRemainingTime() <= 0) { powerUps.Remove(pup); Destroy(pup.gameObject); continue; }
             pup.RunPowerUp();
+            if (pup.GetRemainingTime() <= 0) pup.SetActive(false);
         }
-
     }
     // Cosas de daño
 

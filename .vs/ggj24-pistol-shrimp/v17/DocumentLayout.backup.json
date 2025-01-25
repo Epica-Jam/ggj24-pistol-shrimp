@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\spawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\obstaculoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstaculoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "obstaculoScript.cs",
               "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\obstaculoScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\obstaculoScript.cs",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "spawnerScript.cs",
               "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\spawnerScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\spawnerScript.cs",
@@ -60,22 +60,23 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\playerScript.cs",
               "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\playerScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\playerScript.cs",
-              "ViewState": "AgIAAPAAAAAAAAAAAAAkwDMBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAswDMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-25T17:32:48.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "PowerUp.cs",
               "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\PowerUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUp.cs",
               "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\PowerUp.cs",
               "RelativeToolTip": "Assets\\Scripts\\PowerUp.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAB8AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:29:26.501Z"
+              "WhenOpened": "2025-01-25T17:29:26.501Z",
+              "EditorCaption": ""
             }
           ]
         }
