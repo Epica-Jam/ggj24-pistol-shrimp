@@ -19,6 +19,10 @@ public class playerScript : MonoBehaviour
     [SerializeField]
     private float tiempoInvulnerable = 2f; // Duración de la invulnerabilidad
     private SpriteRenderer spriteRenderer; // Para efectos visuales
+    [SerializeField]
+    private UIscript _uiManager;
+    [SerializeField]
+    private int _puntaje = 0;
 
     // ataque
 
@@ -77,6 +81,8 @@ public class playerScript : MonoBehaviour
 
         pistolaActualtrans = pistola0trans;
         pistolaActualrender = pistola0render;
+
+        _uiManager = GameObject.Find("UI").GetComponent<UIscript>();
     }
 
     // Update is called once per frame
@@ -268,9 +274,18 @@ public class playerScript : MonoBehaviour
 
         private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemigo") || collision.CompareTag("ProyectilEnemigo"))
+        if (collision.CompareTag("Enemigo") || collision.CompareTag("Proyectil Enemigo"))
         {
             RecibirDmg(); // Ajusta la cantidad de daño según el diseño
+            _uiManager.UpdateVidas(vidasJugador);
         }
+    }
+
+    // Puntaje
+    public void AddPuntos(int puntos)
+    {
+        //agregar 10 puntos y actualizarle al UI
+        _puntaje += puntos;
+        _uiManager.UpdatePuntaje(_puntaje);
     }
 }
