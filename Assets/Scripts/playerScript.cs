@@ -86,7 +86,7 @@ public class playerScript : MonoBehaviour
         Movimiento(); // movimiento :)
 
         // Ataques
-        if (powerUps.Any(p => p.m_type == PowerUpType.AutoShoot))
+        if (powerUps.Any(p => p.m_type == PowerUpType.AutoShoot) && PuedeDispararLigero())
         {
             burbuChica();
             tiempoOriginalDisparoLigero = Time.time;

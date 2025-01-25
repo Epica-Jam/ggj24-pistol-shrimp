@@ -22,7 +22,7 @@ public class PowerUp : MonoBehaviour
     public float GetRemainingTime () => m_remainingTime;
     private void Update()
     {
-        //if (!gameObject.activeInHierarchy) return;
+        if (!gameObject.activeInHierarchy) return;
         UpdateMovement();
     }
 
