@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class playerScript : MonoBehaviour
@@ -62,7 +63,7 @@ public class playerScript : MonoBehaviour
     public AudioSource audioSource; // Referencia al AudioSource
     public AudioClip sonidoDisparoLigero; // Sonido para el disparo ligero
     public AudioClip sonidoDmg; // Sonido al ser dañado
-
+    List<PowerUp> powerUps = new List<PowerUp>();
     // Start is called before the first frame update
     void Start()
     {
@@ -85,8 +86,12 @@ public class playerScript : MonoBehaviour
         Movimiento(); // movimiento :)
 
         // Ataques
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && PuedeDispararLigero()) // Disparo ligero
+        if (powerUps.Any(p => p.m_type == PowerUpType.AutoShoot))
+        {
+            burbuChica();
+            tiempoOriginalDisparoLigero = Time.time;
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && PuedeDispararLigero()) // Disparo ligero
         {
             burbuChica();
             tiempoUltimoDisparoLigero = Time.time;
@@ -121,12 +126,12 @@ public class playerScript : MonoBehaviour
         {
             Saltito();
         }
-        
+
         if (Input.GetAxis("Vertical") < 0) // Caida rapida
         {
             player_rb.gravityScale = gravedadFAST;
         }
-        
+
         if (player_rb.velocity.y < 0 && !Input.GetKey(KeyCode.Space)) // Recuperar la caida normal
         {
             player_rb.gravityScale = gravedad;
@@ -170,18 +175,18 @@ public class playerScript : MonoBehaviour
     {
         GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
 
-        float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga/cargaMax); // Interpolacion tamaños
+        float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga / cargaMax); // Interpolacion tamaños
 
-        disparo.transform.localScale = new Vector2(escalado,escalado);
+        disparo.transform.localScale = new Vector2(escalado, escalado);
 
     }
 
     void Saltito()
     {
         player_rb.velocity = new Vector2(player_rb.velocity.x, 0f); // Resetea la velocidad vertical
-        
+
         player_rb.AddForce(Vector2.up * impulsoSalto, ForceMode2D.Impulse); // Aplica fuerza de salto
-        
+
     }
 
     void suavizarCaida()
@@ -192,7 +197,7 @@ public class playerScript : MonoBehaviour
         }
     }
 
-        // Métodos para verificar si se puede disparar
+    // Métodos para verificar si se puede disparar
     bool PuedeDispararLigero()
     {
         return Time.time >= tiempoUltimoDisparoLigero + tiempoEntreDisparosLigero;
@@ -220,6 +225,24 @@ public class playerScript : MonoBehaviour
         tiempoEntreDisparosCargado = tiempoOriginalDisparoCargado;
     }
 
+    public void AddPowerUp(PowerUp pup)
+    {
+        powerUps.Add(pup);
+    }
+    private void RemovePowerUp(PowerUp powerUp)
+    {
+        if (powerUps.Contains(powerUp)) powerUps.Remove(powerUp);
+    }
+
+    private void UpdatePowerUps()
+    {
+        foreach (PowerUp pup in powerUps)
+        {
+            if (pup.GetRemainingTime() <= 0) { powerUps.Remove(pup); Destroy(pup.gameObject); continue; }
+            pup.RunPowerUp();
+        }
+
+    }
     // Cosas de daño
 
     // Método para recibir daño
@@ -266,11 +289,19 @@ public class playerScript : MonoBehaviour
 
     // Colisionador
 
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemigo") || collision.CompareTag("ProyectilEnemigo"))
         {
             RecibirDmg(); // Ajusta la cantidad de daño según el diseño
+        }
+
+        if (collision.CompareTag("Powerup"))
+        {
+            PowerUp pup = collision.gameObject.GetComponent<PowerUp>();
+            if (pup == null) return;
+            pup.gameObject.SetActive(false);
+            AddPowerUp(pup);
         }
     }
 }
