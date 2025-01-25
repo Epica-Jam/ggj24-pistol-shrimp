@@ -13,6 +13,13 @@ public class playerScript : MonoBehaviour
     public float maxCaida = -5f; // Velocidad max de caida
     private Rigidbody2D player_rb;
 
+    // Vidas y daño
+    public int vidasJugador = 3;
+    private bool invulnerable = false; // Bandera para invulnerabilidad
+    [SerializeField]
+    private float tiempoInvulnerable = 2f; // Duración de la invulnerabilidad
+    private SpriteRenderer spriteRenderer; // Para efectos visuales
+
     // ataque
 
     [SerializeField]
@@ -23,7 +30,7 @@ public class playerScript : MonoBehaviour
 
     // cooldowns
     [SerializeField]
-    private float tiempoEntreDisparosLigero = 0.25f; // Tiempo mínimo entre disparos ligeros
+    private float tiempoEntreDisparosLigero = 0.2f; // Tiempo mínimo entre disparos ligeros
     [SerializeField]
     private float tiempoEntreDisparosCargado = 1.5f; // Tiempo mínimo entre disparos cargados
     private float tiempoUltimoDisparoLigero = -Mathf.Infinity;
@@ -32,13 +39,29 @@ public class playerScript : MonoBehaviour
     // referencias ataque
 
     [SerializeField]
-    private Transform pistola; // Transform del objeto hijo pistola, para que los disparos usen su posicion como referencia
+    private Transform pistola0trans; // Transform del objeto hijo pistola, para que los disparos usen su posicion como referencia
+    [SerializeField]
+    private Transform pistola1trans; // tenaza especial
+    [SerializeField]
+    public SpriteRenderer pistola0render;
+    [SerializeField]
+    public SpriteRenderer pistola1render;
+    private Transform pistolaActualtrans;
+    private SpriteRenderer pistolaActualrender;
+    [SerializeField]
+    private bool enPowerup = false;
     [SerializeField]
     private GameObject burbuCprefab; // Prefab de la burbuja chica
     [SerializeField]
     private GameObject burbuGprefab; // Prefab de la burbuja grande
     private float tiempoOriginalDisparoLigero; // Para restaurar tiempos originales
     private float tiempoOriginalDisparoCargado;
+
+    // audio
+
+    public AudioSource audioSource; // Referencia al AudioSource
+    public AudioClip sonidoDisparoLigero; // Sonido para el disparo ligero
+    public AudioClip sonidoDmg; // Sonido al ser dañado
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +72,11 @@ public class playerScript : MonoBehaviour
         // Guardar los tiempos originales porsia
         tiempoOriginalDisparoLigero = tiempoEntreDisparosLigero;
         tiempoOriginalDisparoCargado = tiempoEntreDisparosCargado;
+
+        spriteRenderer = GetComponent<SpriteRenderer>(); // guardar el renderer
+
+        pistolaActualtrans = pistola0trans;
+        pistolaActualrender = pistola0render;
     }
 
     // Update is called once per frame
@@ -104,6 +132,21 @@ public class playerScript : MonoBehaviour
             player_rb.gravityScale = gravedad;
         }
 
+        if (enPowerup) // cambiar de tenaza
+        {
+            pistola1render.enabled = true;
+            pistolaActualtrans = pistola1trans;
+            pistolaActualrender = pistola1render;
+            pistola0render.enabled = false;
+        }
+        else
+        {
+            pistola0render.enabled = true;
+            pistolaActualtrans = pistola0trans;
+            pistolaActualrender = pistola0render;
+            pistola1render.enabled = false;
+        }
+
         suavizarCaida();
     }
 
@@ -119,14 +162,15 @@ public class playerScript : MonoBehaviour
 
     void burbuChica()
     {
-        Instantiate(burbuCprefab, pistola.position, Quaternion.identity);
+        Instantiate(burbuCprefab, pistolaActualtrans.position, Quaternion.identity);
+        audioSource.PlayOneShot(sonidoDisparoLigero);
     }
 
     void burbuGrande()
     {
-        GameObject disparo = Instantiate(burbuGprefab, pistola.position, Quaternion.identity);
+        GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
 
-        float escalado = Mathf.Lerp(0.4f, tamMax, tiempoCarga/cargaMax); // Interpolacion tamaños
+        float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga/cargaMax); // Interpolacion tamaños
 
         disparo.transform.localScale = new Vector2(escalado,escalado);
 
@@ -174,5 +218,59 @@ public class playerScript : MonoBehaviour
     {
         tiempoEntreDisparosLigero = tiempoOriginalDisparoLigero;
         tiempoEntreDisparosCargado = tiempoOriginalDisparoCargado;
+    }
+
+    // Cosas de daño
+
+    // Método para recibir daño
+    public void RecibirDmg()
+    {
+        if (!invulnerable) // Solo recibe daño si no es invulnerable
+        {
+            audioSource.PlayOneShot(sonidoDmg);
+            vidasJugador -= 1;
+
+            Debug.Log("Daño recibido, vidas =" + vidasJugador);
+
+            if (vidasJugador <= 0)
+            {
+                // Lógica de Game Over
+                Debug.Log("¡Game Over!");
+            }
+            else
+            {
+                StartCoroutine(ActivarInvulnerabilidad());
+            }
+        }
+    }
+
+    // Corrutina para invulnerabilidad
+    private IEnumerator ActivarInvulnerabilidad()
+    {
+        invulnerable = true;
+
+        // Feedback visual: Parpadeo
+        float tiempo = 0f;
+        while (tiempo < tiempoInvulnerable)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled; // Alterna visibilidad
+            pistolaActualrender.enabled = !pistolaActualrender.enabled;
+            yield return new WaitForSeconds(0.1f);
+            tiempo += 0.1f;
+        }
+
+        spriteRenderer.enabled = true; // Asegurar que quede visible al final
+        pistolaActualrender.enabled = true;
+        invulnerable = false;
+    }
+
+    // Colisionador
+
+        private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemigo") || collision.CompareTag("ProyectilEnemigo"))
+        {
+            RecibirDmg(); // Ajusta la cantidad de daño según el diseño
+        }
     }
 }
