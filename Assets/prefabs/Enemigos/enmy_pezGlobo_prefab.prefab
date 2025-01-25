@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemigoID: 1
-  _hpEnemigo: 0
+  _hpEnemigo: 3
 --- !u!61 &8649227211066978604
 BoxCollider2D:
   m_ObjectHideFlags: 0

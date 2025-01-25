@@ -269,8 +269,8 @@ MonoBehaviour:
   pistola0render: {fileID: 355061865}
   pistola1render: {fileID: 1536458554}
   enPowerup: 0
-  burbuCprefab: {fileID: 8911127080341655968, guid: d8e4a5aaab6a93743a0dcb1ef456aa7d, type: 3}
-  burbuGprefab: {fileID: 1978541748549156090, guid: 8f821cdc1a0ff6b4d82b7ecab28138f0, type: 3}
+  burbuCprefab: {fileID: 8911127080341655968, guid: b13e6767cb3f4614d9570228811e3245, type: 3}
+  burbuGprefab: {fileID: 1978541748549156090, guid: a2454a95f6919c8459c3f90761cb891d, type: 3}
   audioSource: {fileID: 1422937583}
   sonidoDisparoLigero: {fileID: 8300000, guid: 52e4d56d6269b2b488994c4b8ae33a15, type: 3}
   sonidoDmg: {fileID: 8300000, guid: a26bd60108d638b46ac6e5f9241fa5b9, type: 3}
@@ -1050,7 +1050,8 @@ MonoBehaviour:
   - {fileID: 460938802209792077, guid: ae6b2c9e10918e14cb60d4b80c4f48c8, type: 3}
   - {fileID: 819638408373333245, guid: ca53866c2bd8b92428d89c9a26507fd6, type: 3}
   - {fileID: 5820507154278886237, guid: 1f096ba81577d61419658e3f42e8b95d, type: 3}
-  _powerupPrefabs: []
+  _powerupPrefabs:
+  - {fileID: 5515860939139286905, guid: 6fbd2a2552f9ed04a978c4db3adc7af3, type: 3}
   spawnXPos: 10
   minYPos: -4
   maxYPos: 4
@@ -1085,14 +1086,14 @@ RectTransform:
   m_GameObject: {fileID: 619623026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 173122588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 764, y: -112}
+  m_AnchoredPosition: {x: 758, y: -132}
   m_SizeDelta: {x: 157.28, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619623028
@@ -1117,8 +1118,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
+  m_sharedMaterial: {fileID: -4277308333746581375, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1142,7 +1143,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -3727,14 +3728,14 @@ RectTransform:
   m_GameObject: {fileID: 1915951718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 173122588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 743, y: -84}
+  m_AnchoredPosition: {x: 737, y: -94}
   m_SizeDelta: {x: 157.28, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915951720
@@ -3759,8 +3760,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Puntos
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
+  m_sharedMaterial: {fileID: -4277308333746581375, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3784,7 +3785,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
