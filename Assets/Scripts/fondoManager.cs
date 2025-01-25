@@ -7,7 +7,7 @@ public class fondoManager : MonoBehaviour
     [SerializeField]
     public float scrollSpeed = 2f; // Velocidad del fondo
     [SerializeField]
-    public float backgroundWidth = 18.2f; // Ancho del fondo (ajustar)
+    public float backgroundWidth = 1200f; // Ancho del fondo (ajustar)
     private Transform[] backgrounds; // Array para guardar los fondos
     // Start is called before the first frame update
     void Start()
