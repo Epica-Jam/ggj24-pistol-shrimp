@@ -6,12 +6,14 @@ public class burbu2script : MonoBehaviour
 {
     private enemigoScript enemigoOriginal;
     private playerScript player;
+    private AudioClip pop;
     [SerializeField]
     private float escalaMiniEnemy = 0.4f;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("player").GetComponent<playerScript>();
+        pop = player.popBurbuja;
     }
 
     // Update is called once per frame
@@ -34,7 +36,9 @@ public class burbu2script : MonoBehaviour
         {
             enemigoOriginal.Borrar(); // Mata al enemigo original
             Destroy(gameObject);     // Destruye la burbuja
+            player.MandarAudio(pop);
             player.AddPuntos(150);
+            
         }
     }
 }

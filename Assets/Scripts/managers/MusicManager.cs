@@ -9,11 +9,13 @@ public class MusicManager : MonoBehaviour
     AudioSource source;
     public AudioClip mainOst;
     public AudioClip gameOverOst;
+    private AudioLowPassFilter lowPassFilter;
 
     private void Awake()
     {
         if (Instance != null) return;
         Instance = this;
+        lowPassFilter = GetComponent<AudioLowPassFilter>();
     }
 
     void Start()
@@ -38,5 +40,17 @@ public class MusicManager : MonoBehaviour
     {
         source.clip = gameOverOst;
         source.Play();
+    }
+
+    public void SetLowPass(bool activo)
+    {
+        if (lowPassFilter != null)
+        {
+            lowPassFilter.enabled = activo;
+        }
+        else
+        {
+            Debug.LogWarning("Audio Low Pass Filter no encontrado en MusicManager.");
+        }
     }
 }
