@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4ce9d1c0f70fc44bfbdbc9442db35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHp: 20
+  m_maxHp: 100
   m_idle: 0
-  m_idleTime: 40.549896
+  m_idleTime: 0
   rootCollider: {fileID: 8805941569127517998}
   colliderStep: 0
 --- !u!212 &7088426335805548266
