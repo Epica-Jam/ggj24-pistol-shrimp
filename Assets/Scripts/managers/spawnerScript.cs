@@ -54,7 +54,7 @@ public class spawnerScript : MonoBehaviour
 
     public void SpawnBoss()
     {
-        SpawnearObj(_bossPrefabs);
+        Instantiate(_bossPrefabs[0]);
     }
 
     IEnumerator SpawnEnemigosRoutine()

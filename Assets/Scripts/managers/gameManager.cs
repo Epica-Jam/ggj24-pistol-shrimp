@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         spawnerScript.Instance.intervaloSpawnObjetos -= 0.2f;
         spawnerScript.Instance.intervaloSpawnEnemigos -= 0.2f;
         UIscript.Instance.UpdateLevel();
-        if (m_level == 2) spawnerScript.Instance.SpawnBoss();
+        if (m_level == 5) spawnerScript.Instance.SpawnBoss();
     }
 
     public void GameOver()
