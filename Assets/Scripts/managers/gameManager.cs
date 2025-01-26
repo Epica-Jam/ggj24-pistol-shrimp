@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public float m_nextLevelFactor = 1.1f;
     public float m_movementSpeedMultiplier = 1f;
     public float m_movementSpeedIncrease = 0.1f;
+    [SerializeField]
+    public GameObject creditos;
 
     private void Awake()
     {
@@ -42,11 +44,15 @@ public class GameManager : MonoBehaviour
         spawnerScript.Instance.intervaloSpawnObjetos -= 0.2f;
         spawnerScript.Instance.intervaloSpawnEnemigos -= 0.2f;
         UIscript.Instance.UpdateLevel();
-        if (m_level == 5) spawnerScript.Instance.SpawnBoss();
     }
 
     public void GameOver()
     {
         MusicManager.Instance.PlayGameOverOST();
+    }
+
+    public void GameWon()
+    {
+        creditos.SetActive(true);
     }
 }

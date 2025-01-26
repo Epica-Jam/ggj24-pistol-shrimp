@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
-    public static playerScript Instance {  get; private set; }
     // movimiento
 
     public float velocPlayer = 4.5f; // Velocidad de movimiento horizontal
@@ -78,12 +77,6 @@ public class playerScript : MonoBehaviour
     
     List<PowerUp> powerUps = new List<PowerUp>();
     // Start is called before the first frame update
-    private void Awake()
-    {
-        if (Instance != null) return;
-        Instance = this;
-    }
-
     void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
