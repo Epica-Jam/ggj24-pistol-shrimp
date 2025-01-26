@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIscript : MonoBehaviour
@@ -18,6 +19,12 @@ public class UIscript : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer _gameOver;
+    [SerializeField]
+    private GameObject botonMenuGameOver;
+    [SerializeField]
+    private GameObject textoNivelGameOver;
+    [SerializeField]
+    private GameObject botonPausaGameOver;
 
     private void Awake()
     {
@@ -29,6 +36,7 @@ public class UIscript : MonoBehaviour
     void Start()
     {
         _puntajeText.text = "0";
+        botonMenuGameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,7 +69,10 @@ public class UIscript : MonoBehaviour
         {
             _vida1.GetComponent<Animator>().SetTrigger("Daño");
             _gameOver.enabled = true;
-            _puntajeText.transform.parent.position = new Vector2(Camera.main.rect.center.x, Camera.main.rect.center.y);
+            _puntajeText.transform.parent.position = new Vector2(-4.866f, -7.55f);
+            botonMenuGameOver.SetActive(true);
+            botonPausaGameOver.SetActive(false);
+            textoNivelGameOver.SetActive(false);
         }
     }
 }

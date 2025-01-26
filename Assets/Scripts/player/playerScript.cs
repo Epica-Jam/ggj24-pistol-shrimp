@@ -117,13 +117,13 @@ public class playerScript : MonoBehaviour
         {
             tenaza.GetComponent<Animator>().SetBool("disparando", false);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
+        if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.X) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
         {
             cargando = true;
             tiempoCarga = 0f;
         }
 
-        if (cargando && Input.GetKey(KeyCode.Mouse1)) // Carga del disparo cargado
+        if (cargando && Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.X)) // Carga del disparo cargado
         {
             tiempoCarga += Time.deltaTime;
 
@@ -134,7 +134,7 @@ public class playerScript : MonoBehaviour
 
         }
 
-        if (cargando && Input.GetKeyUp(KeyCode.Mouse1)) // Disparo de la burbuja cargada
+        if (cargando && Input.GetKeyUp(KeyCode.Mouse1) || Input.GetKeyUp(KeyCode.X)) // Disparo de la burbuja cargada
         {
             cargando = false;
             burbuGrande();
