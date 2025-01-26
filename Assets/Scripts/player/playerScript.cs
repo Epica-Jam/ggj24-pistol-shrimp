@@ -54,6 +54,8 @@ public class playerScript : MonoBehaviour
     private Transform pistolaActualtrans;
     private SpriteRenderer pistolaActualrender;
     [SerializeField]
+    private GameObject tenaza;
+    [SerializeField]
     private bool enPowerup = false;
     [SerializeField]
     private GameObject burbuCprefab; // Prefab de la burbuja chica
@@ -96,14 +98,20 @@ public class playerScript : MonoBehaviour
         if (powerUps.Any(p => p.m_type == PowerUpType.AutoShoot) && PuedeDispararLigero())
         {
             enPowerup = true;
+            tenaza.GetComponent<Animator>().SetBool("disparando", true);
             burbuChica();
             tiempoUltimoDisparoLigero = Time.time;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Z) && PuedeDispararLigero()) // Disparo ligero
         {
             enPowerup = false;
+            tenaza.GetComponent<Animator>().SetBool("disparando", true);
             burbuChica();
             tiempoUltimoDisparoLigero = Time.time;
+        }
+        else 
+        {
+            tenaza.GetComponent<Animator>().SetBool("disparando", false);
         }
         //if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
         //{

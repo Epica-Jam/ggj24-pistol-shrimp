@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a7f551ad6f1130b4c8b99efa2f096fd8
+guid: 78a0ecdde8f30c44abe6dc4b5c898529
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 240
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_0
+      name: burbuja-sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 240
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f8478c74e0e01b48bebc744001f88e4
-      internalID: 729165922
+      spriteID: bce74531ac09179428b4dc852c64ce17
+      internalID: -956615387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_1
+      name: burbuja-sheet_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 11
         y: 0
-        width: 320
-        height: 240
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 807a360e7a9efe445b700e83275ca5a8
-      internalID: 1326378828
+      spriteID: 08a0995bf09d7f34589aa470f41c6ac0
+      internalID: -1961090367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_2
+      name: burbuja-sheet_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 22
         y: 0
-        width: 320
-        height: 240
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e983ce51a97a59c41840e6db2ca95f94
-      internalID: -1414197557
+      spriteID: bfd74f62be641444b9c5eb90b92cfb6b
+      internalID: -1266123320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_3
+      name: burbuja-sheet_3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 33
         y: 0
-        width: 320
-        height: 240
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,92 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78065cc9341b95a4ea6c4d4441eac223
-      internalID: 140984714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_4
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 320
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0f7b7b055abfbf40a1ecffa0462fbba
-      internalID: 829160394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_5
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 320
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c01e02b342ba48478586536b417e66a
-      internalID: 1607786333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_6
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 320
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d41b30ec32ff91438afd91540d75388
-      internalID: -854652904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: camaroncin-logo-sheet 1_7
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 320
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 626a12e484bd3ac4f8b91173e1e45317
-      internalID: -273838605
+      spriteID: 728b07fcb6ba2a844b8e03c194c4834f
+      internalID: -194859427
       vertices: []
       indices: 
       edges: []
@@ -301,14 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      camaroncin-logo-sheet 1_0: 729165922
-      camaroncin-logo-sheet 1_1: 1326378828
-      camaroncin-logo-sheet 1_2: -1414197557
-      camaroncin-logo-sheet 1_3: 140984714
-      camaroncin-logo-sheet 1_4: 829160394
-      camaroncin-logo-sheet 1_5: 1607786333
-      camaroncin-logo-sheet 1_6: -854652904
-      camaroncin-logo-sheet 1_7: -273838605
+      burbuja-sheet_0: -956615387
+      burbuja-sheet_1: -1961090367
+      burbuja-sheet_2: -1266123320
+      burbuja-sheet_3: -194859427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
