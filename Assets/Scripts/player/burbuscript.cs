@@ -5,7 +5,7 @@ using UnityEngine;
 public class burbuscript : MonoBehaviour
 {
     [SerializeField]
-    private float _dispSpeed = 7f; 
+    private float _dispSpeed = 7f;
     
     // Start is called before the first frame update
     void Start()

@@ -13,6 +13,9 @@ public class enemigoScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private playerScript _player;
+    private float targetY; // Posicion eje Y del jugador
+    private float vertSpeed = 2f; // Velocidad de movimiento vertical
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,15 @@ public class enemigoScript : MonoBehaviour
         if (_enemigoID == 1)
         {
             _hpEnemigo = 3f;
+
+            if (_player != null)
+            {
+                targetY = _player.transform.position.y;
+            }
+            else
+            {
+                targetY = transform.position.y; // Si no hay jugador que quede en su posición actual
+            }
         }
     }
 
@@ -39,7 +51,14 @@ public class enemigoScript : MonoBehaviour
         }
         else if (_enemigoID == 1)
         {
-            transform.Translate(Vector2.left * 4f * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime); ;
+            transform.Translate(Vector2.left * 4f * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime);
+
+            // Movimiento vertical
+            float step = vertSpeed * Time.deltaTime;
+            transform.position = new Vector2(
+                transform.position.x,
+                Mathf.MoveTowards(transform.position.y, targetY, step)
+            );
         }
         else if (_enemigoID == 2)
         {
@@ -50,12 +69,11 @@ public class enemigoScript : MonoBehaviour
             Debug.LogError("ID invalida o no asignada correctamente.");
         }
 
+        // Destruir si sale del rango vertical
         if (transform.position.y < -7f)
         {
             Destroy(this.gameObject);
         }
-
-
     }
 
     IEnumerator DamageFlicker()
@@ -76,8 +94,8 @@ public class enemigoScript : MonoBehaviour
         {
             _player.AddPuntos(50);
         }
-        _hpEnemigo -= 1f;
         StartCoroutine(DamageFlicker());
+        _hpEnemigo -=1f;
         if (_hpEnemigo <= 0)
         {
             if (_player != null)

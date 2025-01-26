@@ -27,11 +27,11 @@ public class playerScript : MonoBehaviour
 
     // ataque
 
-    [SerializeField]
-    private float tiempoCarga = 0f; // T0 de carga
-    private bool cargando = false; // Bool de si esta cargando o no
-    private float cargaMax = 2f; // carga maxima posible
-    private float tamMax = 3f; // tamaño maximo de la burbuja cargada
+    //[SerializeField]
+    //private float tiempoCarga = 0f; // T0 de carga
+    //private bool cargando = false; // Bool de si esta cargando o no
+    //private float cargaMax = 2f; // carga maxima posible
+    //private float tamMax = 3f; // tamaño maximo de la burbuja cargada
 
     // cooldowns
     [SerializeField]
@@ -95,41 +95,43 @@ public class playerScript : MonoBehaviour
         // Ataques
         if (powerUps.Any(p => p.m_type == PowerUpType.AutoShoot) && PuedeDispararLigero())
         {
+            enPowerup = true;
             burbuChica();
             tiempoUltimoDisparoLigero = Time.time;
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && PuedeDispararLigero()) // Disparo ligero
+        else if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Z) && PuedeDispararLigero()) // Disparo ligero
         {
+            enPowerup = false;
             burbuChica();
             tiempoUltimoDisparoLigero = Time.time;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
-        {
-            cargando = true;
-            tiempoCarga = 0f;
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
+        //{
+          //  cargando = true;
+            //tiempoCarga = 0f;
+        //}
 
-        if (cargando && Input.GetKey(KeyCode.Mouse1)) // Carga del disparo cargado
-        {
-            tiempoCarga += Time.deltaTime;
+        //if (cargando && Input.GetKey(KeyCode.Mouse1)) // Carga del disparo cargado
+        //{
+         //   tiempoCarga += Time.deltaTime;
 
-            if (tiempoCarga > cargaMax)
-            {
-                tiempoCarga = cargaMax;
-            }
+           // if (tiempoCarga > cargaMax)
+           // {
+             //   tiempoCarga = cargaMax;
+           // }
 
-        }
+        //}
 
-        if (cargando && Input.GetKeyUp(KeyCode.Mouse1)) // Disparo de la burbuja cargada
-        {
-            cargando = false;
-            burbuGrande();
-            tiempoUltimoDisparoCargado = Time.time;
-        }
+        //if (cargando && Input.GetKeyUp(KeyCode.Mouse1)) // Disparo de la burbuja cargada
+        //{
+            //cargando = false;
+            //burbuGrande();
+            //tiempoUltimoDisparoCargado = Time.time;
+        //}
 
         // Salto
 
-        if (Input.GetKeyDown(KeyCode.Space)) // Salto normal
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) // Salto normal
         {
             Saltito();
         }
@@ -179,15 +181,15 @@ public class playerScript : MonoBehaviour
         audioSource.PlayOneShot(sonidoDisparoLigero);
     }
 
-    void burbuGrande()
-    {
-        GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
+    //void burbuGrande()
+    //{
+      //  GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
 
-        float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga / cargaMax); // Interpolacion tamaños
+       // float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga / cargaMax); // Interpolacion tamaños
 
-        disparo.transform.localScale = new Vector2(escalado, escalado);
+        //disparo.transform.localScale = new Vector2(escalado, escalado);
 
-    }
+    //}
 
     void Saltito()
     {
