@@ -7,16 +7,28 @@
       "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\spawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\uiscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uiscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\obstaculoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EDC7E284-A190-7AED-DCDC-9840787AFBF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstaculoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\obstaculoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\obstaculoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UnityProjects\\ggj24-pistol-shrimp\\assets\\scripts\\enemigoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\enemigoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,32 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "obstaculoScript.cs",
               "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\obstaculoScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\obstaculoScript.cs",
               "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\obstaculoScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\obstaculoScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T18:31:03.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "spawnerScript.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\spawnerScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\spawnerScript.cs",
-              "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\spawnerScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\spawnerScript.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T18:26:01.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T20:17:14.719Z"
             },
             {
               "$type": "Document",
@@ -61,23 +60,70 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\playerScript.cs",
               "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\playerScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\playerScript.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAgwF4AAABaAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:32:48.896Z",
+              "WhenOpened": "2025-01-25T20:13:35.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UIscript.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\UIscript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIscript.cs",
+              "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\UIscript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIscript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T20:13:20.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowCkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T20:01:44.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "enemigoScript.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\enemigoScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\enemigoScript.cs",
+              "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\enemigoScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\enemigoScript.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCgAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T19:35:18.934Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "spawnerScript.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\spawnerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\spawnerScript.cs",
+              "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\spawnerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\spawnerScript.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwDAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T18:26:01.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PowerUp.cs",
               "DocumentMoniker": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\PowerUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUp.cs",
               "ToolTip": "D:\\UnityProjects\\ggj24-pistol-shrimp\\Assets\\Scripts\\PowerUp.cs",
               "RelativeToolTip": "Assets\\Scripts\\PowerUp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:29:26.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T17:29:26.501Z"
             }
           ]
         }

@@ -35,11 +35,11 @@ public class enemigoScript : MonoBehaviour
     {
         if (_enemigoID == 0)
         {
-            transform.Translate(Vector2.left * 3f * Time.deltaTime);
+            transform.Translate(Vector2.left * 3f * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime);
         }
         else if (_enemigoID == 1)
         {
-            transform.Translate(Vector2.left * 4f * Time.deltaTime);;
+            transform.Translate(Vector2.left * 4f * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime); ;
         }
         else if (_enemigoID == 2)
         {
@@ -55,6 +55,29 @@ public class enemigoScript : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+
+    }
+
+    IEnumerator DamageFlicker()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (spriteRenderer.color == Color.white) spriteRenderer.color = Color.red;
+            else spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(0.25f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Burbuja")) return;
+        Destroy(other.gameObject);
+        if (_player != null)
+        {
+            _player.AddPuntos(50);
+        }
+        _hpEnemigo -= 1f;
+        StartCoroutine(DamageFlicker());
         if (_hpEnemigo <= 0)
         {
             if (_player != null)
@@ -62,21 +85,6 @@ public class enemigoScript : MonoBehaviour
                 _player.AddPuntos(100);
             }
             Destroy(this.gameObject);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Burbuja")
-        {
-            Destroy(other.gameObject);
-            if (_player != null)
-            {
-                _player.AddPuntos(50);
-            }
-            _hpEnemigo -= 1f;
-            spriteRenderer.color = new Color(1, 1, 1, 0.5f);
-            spriteRenderer.color = Color.white;
         }
     }
 }

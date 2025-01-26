@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerScript : MonoBehaviour
@@ -36,7 +35,7 @@ public class playerScript : MonoBehaviour
 
     // cooldowns
     [SerializeField]
-    private float tiempoEntreDisparosLigero = 0.5f; // Tiempo mínimo entre disparos ligeros
+    private float tiempoEntreDisparosLigero = 0.2f; // Tiempo mínimo entre disparos ligeros
     [SerializeField]
     private float tiempoEntreDisparosCargado = 1.5f; // Tiempo mínimo entre disparos cargados
     private float tiempoUltimoDisparoLigero = -Mathf.Infinity;
@@ -239,11 +238,6 @@ public class playerScript : MonoBehaviour
         pup.SetActive(true);
         powerUps.Add(pup);
     }
-    private void RemoveInactivePowerups()
-    {
-        foreach (PowerUp powerUp in powerUps)
-            if (powerUps.Contains(powerUp) && !powerUp.m_active) powerUps.Remove(powerUp);
-    }
 
     private void UpdatePowerUps()
     {
@@ -314,6 +308,7 @@ public class playerScript : MonoBehaviour
             PowerUp pup = collision.gameObject.GetComponent<PowerUp>();
             if (pup == null) return;
             pup.gameObject.SetActive(false);
+            if (pup.m_type == PowerUpType.AutoShoot) tiempoEntreDisparosLigero = 0.1f;
             AddPowerUp(pup);
         }
     }
@@ -323,6 +318,7 @@ public class playerScript : MonoBehaviour
     {
         //agregar 10 puntos y actualizarle al UI
         _puntaje += puntos;
-        _uiManager.UpdatePuntaje(_puntaje);
+        GameManager.Instance.AddPoints(puntos);
+        _uiManager.UpdatePuntaje(GameManager.Instance.m_score);
     }
 }

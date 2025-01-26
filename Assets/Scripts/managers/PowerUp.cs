@@ -34,7 +34,7 @@ public class PowerUp : MonoBehaviour
 
     void UpdateMovement()
     {
-        transform.Translate(m_movementSpeed * Time.deltaTime * Vector2.left);
+        transform.Translate(m_movementSpeed * Time.deltaTime * GameManager.Instance.m_movementSpeedMultiplier * Vector2.left);
         //if (!Camera.main.rect.Contains(transform.position)) Destroy(this);
     }
 
@@ -42,6 +42,4 @@ public class PowerUp : MonoBehaviour
     {
         m_remainingTime -= Time.deltaTime;
     }
-
-
 }

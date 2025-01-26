@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class UIscript : MonoBehaviour
 {
+    public static UIscript Instance { get; private set; }
+
+    [SerializeField]
+    TMP_Text _levelText;
     [SerializeField]
     private TMP_Text _puntajeText;
     [SerializeField]
@@ -22,7 +23,13 @@ public class UIscript : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer _gameOver;
-    
+
+    private void Awake()
+    {
+        if (Instance != null) return;
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +42,12 @@ public class UIscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void UpdateLevel()
+    {
+        _levelText.text = $"Nivel {GameManager.Instance.m_level}";
     }
 
     public void UpdatePuntaje(int playerScore)
@@ -60,6 +72,7 @@ public class UIscript : MonoBehaviour
             sprite2.sprite = _vidaVacia;
             sprite1.sprite = _vidaVacia;
             _gameOver.enabled = true;
+            _puntajeText.transform.parent.position = new Vector2(Camera.main.rect.center.x, Camera.main.rect.center.y);
         }
     }
 }

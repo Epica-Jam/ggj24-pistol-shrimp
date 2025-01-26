@@ -15,7 +15,7 @@ public class obstaculoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * _obsSpeed * Time.deltaTime);
+        transform.Translate(Vector2.left * _obsSpeed * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime);
 
         if (transform.position.x < -10f) // se destruye despues del valor
         {

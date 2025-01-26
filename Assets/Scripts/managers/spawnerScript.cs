@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class spawnerScript : MonoBehaviour
 {
+    public static spawnerScript Instance { get; private set; }
+
+
     [Header("Prefabs")]
     [SerializeField]
     private GameObject[] _enemigoPrefabs; // Prefabs de enemigos
@@ -20,16 +23,18 @@ public class spawnerScript : MonoBehaviour
     [SerializeField]
     private float maxYPos = 4f; // Límite superior vertical
 
-    [SerializeField]
-    private float intervaloSpawnEnemigos = 3f; // Intervalo de spawn para enemigos
-    [SerializeField]
-    private float intervaloSpawnObjetos = 4f; // Intervalo de spawn para obstáculos
-    [SerializeField]
-    private float intervaloMinPowerup = 8f; // Tiempo mínimo entre powerups
-    [SerializeField]
-    private float intervaloMaxPowerup = 12f; // Tiempo máximo entre powerups
+    public float intervaloSpawnEnemigos = 3f; // Intervalo de spawn para enemigos
+    public float intervaloSpawnObjetos = 4f; // Intervalo de spawn para obstáculos
+    public float intervaloMinPowerup = 8f; // Tiempo mínimo entre powerups
+    public float intervaloMaxPowerup = 12f; // Tiempo máximo entre powerups
 
     private bool pararSpawn = false; // Dejar de spawnear?
+
+    private void Awake()
+    {
+        if (Instance != null) return;
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
