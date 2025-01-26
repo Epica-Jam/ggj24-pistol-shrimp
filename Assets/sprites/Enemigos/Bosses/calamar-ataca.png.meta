@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: ad56ae2f7ae5bd94fbf109b7fb4444f1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: calamar-ataca_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 147, y: 56}
+        - {x: 132, y: 43}
+        - {x: 124, y: 27}
+        - {x: 115, y: 6}
+        - {x: 106, y: -8}
+        - {x: 98, y: -30}
+        - {x: 91, y: -40}
+        - {x: 73, y: -44}
+        - {x: 46, y: -40}
+        - {x: 25, y: -17}
+        - {x: 0, y: 1}
+        - {x: -34, y: 1}
+        - {x: -54, y: -4}
+        - {x: -58, y: -7}
+        - {x: -57, y: -10}
+        - {x: -12, y: -21}
+        - {x: 17, y: -84}
+        - {x: 23, y: -108}
+        - {x: 26, y: -118}
+        - {x: 28, y: -120}
+        - {x: 160, y: -120}
+        - {x: 160, y: 63}
+        - {x: 154, y: 61}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: b9480d28cc15f7b4ea3f52de549f195b
+      internalID: 925236288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calamar-ataca_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 153, y: 46}
+        - {x: 137, y: 27}
+        - {x: 106, y: -28}
+        - {x: 96, y: -26}
+        - {x: 64, y: -5}
+        - {x: 48, y: 44}
+        - {x: 23, y: 68}
+        - {x: 7, y: 76}
+        - {x: -13, y: 82}
+        - {x: -16, y: 82}
+        - {x: -17, y: 80}
+        - {x: -16, y: 77}
+        - {x: 19, y: 46}
+        - {x: 20, y: 4}
+        - {x: 11, y: -28}
+        - {x: 9, y: -61}
+        - {x: 9, y: -105}
+        - {x: 4, y: -111}
+        - {x: 0, y: -118}
+        - {x: 0, y: -120}
+        - {x: 160, y: -120}
+        - {x: 160, y: 47}
+        - {x: 158, y: 47}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: 64fa8b652cb7a7b4fbcb03eee7ef88f6
+      internalID: 860947705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calamar-ataca_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 106, y: -10}
+        - {x: 74, y: 19}
+        - {x: 73, y: 28}
+        - {x: 60, y: 50}
+        - {x: 33, y: 77}
+        - {x: 13, y: 86}
+        - {x: -24, y: 86}
+        - {x: -37, y: 84}
+        - {x: -40, y: 77}
+        - {x: 12, y: 65}
+        - {x: 14, y: 45}
+        - {x: 4, y: 10}
+        - {x: -15, y: -25}
+        - {x: -31, y: -27}
+        - {x: -44, y: -31}
+        - {x: -59, y: -39}
+        - {x: -63, y: -42}
+        - {x: -67, y: -46}
+        - {x: -67, y: -48}
+        - {x: -64, y: -49}
+        - {x: -57, y: -48}
+        - {x: -39, y: -44}
+        - {x: -35, y: -43}
+        - {x: -10, y: -47}
+        - {x: 21, y: -80}
+        - {x: 40, y: -120}
+        - {x: 160, y: -120}
+        - {x: 160, y: 27}
+        - {x: 144, y: 24}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: d3eaab19747b6254ca651db4f533aaf3
+      internalID: 285592765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calamar-ataca_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 106, y: -10}
+        - {x: 87, y: -5}
+        - {x: 76, y: 28}
+        - {x: 55, y: 63}
+        - {x: 24, y: 87}
+        - {x: 13, y: 88}
+        - {x: -18, y: 88}
+        - {x: -31, y: 84}
+        - {x: -36, y: 79}
+        - {x: 12, y: 68}
+        - {x: 17, y: 43}
+        - {x: 11, y: 22}
+        - {x: -1, y: -9}
+        - {x: -11, y: -21}
+        - {x: -34, y: -27}
+        - {x: -42, y: -29}
+        - {x: -60, y: -42}
+        - {x: -64, y: -49}
+        - {x: -63, y: -52}
+        - {x: -57, y: -52}
+        - {x: -14, y: -41}
+        - {x: 29, y: -91}
+        - {x: 41, y: -120}
+        - {x: 160, y: -120}
+        - {x: 160, y: 27}
+        - {x: 144, y: 24}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: cbce3197647109f469698b28afdbe45f
+      internalID: 1201876542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calamar-ataca_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 126, y: 7}
+        - {x: 106, y: -11}
+        - {x: 84, y: 0}
+        - {x: 81, y: 27}
+        - {x: 72, y: 47}
+        - {x: 36, y: 84}
+        - {x: 31, y: 86}
+        - {x: 4, y: 86}
+        - {x: -15, y: 84}
+        - {x: -24, y: 78}
+        - {x: -24, y: 68}
+        - {x: -4, y: 71}
+        - {x: 23, y: 67}
+        - {x: 16, y: 34}
+        - {x: 2, y: -2}
+        - {x: -42, y: -18}
+        - {x: -56, y: -24}
+        - {x: -66, y: -35}
+        - {x: -66, y: -36}
+        - {x: -65, y: -39}
+        - {x: -59, y: -39}
+        - {x: -39, y: -32}
+        - {x: -18, y: -30}
+        - {x: 23, y: -80}
+        - {x: 37, y: -116}
+        - {x: 39, y: -120}
+        - {x: 160, y: -120}
+        - {x: 160, y: 27}
+        - {x: 145, y: 23}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: 47fe3bbe91cbfa24590e5ba2ef448472
+      internalID: 1931967138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      calamar-ataca_0: 925236288
+      calamar-ataca_1: 860947705
+      calamar-ataca_2: 285592765
+      calamar-ataca_3: 1201876542
+      calamar-ataca_4: 1931967138
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

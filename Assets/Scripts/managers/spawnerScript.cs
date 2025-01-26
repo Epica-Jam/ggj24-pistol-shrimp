@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class spawnerScript : MonoBehaviour
@@ -14,6 +13,8 @@ public class spawnerScript : MonoBehaviour
     private GameObject[] _obstaculoPrefabs; // Prefabs de obstáculos
     [SerializeField]
     private GameObject[] _powerupPrefabs; // Prefabs de powerups
+    [SerializeField]
+    private GameObject[] _bossPrefabs;
 
     [Header("config Spawns")]
     [SerializeField]
@@ -29,6 +30,8 @@ public class spawnerScript : MonoBehaviour
     public float intervaloMaxPowerup = 12f; // Tiempo máximo entre powerups
 
     private bool pararSpawn = false; // Dejar de spawnear?
+
+
 
     private void Awake()
     {
@@ -49,6 +52,11 @@ public class spawnerScript : MonoBehaviour
         StartCoroutine(SpawnPowerupsRoutine());
     }
 
+    public void SpawnBoss()
+    {
+        SpawnearObj(_bossPrefabs);
+    }
+
     IEnumerator SpawnEnemigosRoutine()
     {
         yield return new WaitForSeconds(2.0f); // Pequeño retraso inicial
@@ -61,7 +69,7 @@ public class spawnerScript : MonoBehaviour
 
     IEnumerator SpawnObstaculosRoutine()
     {
-        yield return new WaitForSeconds(1.0f); 
+        yield return new WaitForSeconds(1.0f);
         while (!pararSpawn)
         {
             SpawnearObj(_obstaculoPrefabs);
@@ -71,7 +79,7 @@ public class spawnerScript : MonoBehaviour
 
     IEnumerator SpawnPowerupsRoutine()
     {
-        yield return new WaitForSeconds(5.0f); 
+        yield return new WaitForSeconds(5.0f);
         while (!pararSpawn)
         {
             float interval = Random.Range(intervaloMinPowerup, intervaloMaxPowerup);
