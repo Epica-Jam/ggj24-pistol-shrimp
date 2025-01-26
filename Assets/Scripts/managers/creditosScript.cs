@@ -17,7 +17,7 @@ public class creditosScript : MonoBehaviour
 
     private IEnumerator PlayCredits()
     {
-
+       
         background.SetActive(true);
 
         foreach (var text in textGroups)
@@ -27,7 +27,7 @@ public class creditosScript : MonoBehaviour
             yield return StartCoroutine(FadeOutText(text));
         }
 
-
+        
         finalObjects.SetActive(true);
     }
 
@@ -69,4 +69,3 @@ public class creditosScript : MonoBehaviour
         text.color = color;
     }
 }
-
