@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pausaScript : MonoBehaviour
 {
@@ -37,4 +38,13 @@ public class pausaScript : MonoBehaviour
         Time.timeScale = 0f;
         Pausado = true;
     }
+
+    public void irMenu()
+    {
+        Pausado = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MenuPrin");
+    }
+
+
 }

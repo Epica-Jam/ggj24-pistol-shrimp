@@ -11,15 +11,10 @@ public class UIscript : MonoBehaviour
     private TMP_Text _puntajeText;
     [SerializeField]
     private GameObject _vida1;
-    private SpriteRenderer sprite1;
     [SerializeField]
     private GameObject _vida2;
-    private SpriteRenderer sprite2;
     [SerializeField]
     private GameObject _vida3;
-    private SpriteRenderer sprite3;
-    [SerializeField]
-    private Sprite _vidaVacia;
 
     [SerializeField]
     private SpriteRenderer _gameOver;
@@ -34,9 +29,6 @@ public class UIscript : MonoBehaviour
     void Start()
     {
         _puntajeText.text = "0";
-        sprite1 = _vida1.GetComponent<SpriteRenderer>();
-        sprite2 = _vida2.GetComponent<SpriteRenderer>();
-        sprite3 = _vida3.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -59,18 +51,15 @@ public class UIscript : MonoBehaviour
     {
         if (vidaActual == 2)
         {
-            sprite3.sprite = _vidaVacia;
+            _vida3.GetComponent<Animator>().SetTrigger("Daño");
         }
         if (vidaActual == 1)
         {
-            sprite3.sprite = _vidaVacia;
-            sprite2.sprite = _vidaVacia;
+            _vida2.GetComponent<Animator>().SetTrigger("Daño");
         }
         if (vidaActual == 0)
         {
-            sprite3.sprite = _vidaVacia;
-            sprite2.sprite = _vidaVacia;
-            sprite1.sprite = _vidaVacia;
+            _vida1.GetComponent<Animator>().SetTrigger("Daño");
             _gameOver.enabled = true;
             _puntajeText.transform.parent.position = new Vector2(Camera.main.rect.center.x, Camera.main.rect.center.y);
         }
