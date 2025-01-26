@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5355086502191740383}
   - component: {fileID: 1532060041061366622}
   - component: {fileID: 4048152965700565307}
+  - component: {fileID: -2938377453232203655}
   m_Layer: 6
   m_Name: enmy_anguila_prefab
   m_TagString: Enemigo
@@ -173,3 +174,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9583333, y: 0.6055962}
   m_EdgeRadius: 0
+--- !u!95 &-2938377453232203655
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796459397170258633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d068f4099ab53be488100e0dc7983767, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

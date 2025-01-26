@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1591079915805515003}
   - component: {fileID: 4735362631500392137}
   - component: {fileID: 8459176350144044558}
+  - component: {fileID: -3420080037413246183}
   m_Layer: 0
   m_Name: obs_botella_prefab
   m_TagString: Enemigo
@@ -144,3 +145,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obsSpeed: 5
+--- !u!95 &-3420080037413246183
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819638408373333245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5233eb689061bf2459abc2a57c20194c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
