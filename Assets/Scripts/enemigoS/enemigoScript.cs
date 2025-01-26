@@ -6,6 +6,7 @@ public class enemigoScript : MonoBehaviour
 {
     // 0 = coral
     // 1 = pez globo
+    // 2 = anguila
 
     [SerializeField]
     private int _enemigoID;
@@ -40,6 +41,19 @@ public class enemigoScript : MonoBehaviour
                 targetY = transform.position.y; // Si no hay jugador que quede en su posición actual
             }
         }
+        if (_enemigoID == 2)
+        {
+            _hpEnemigo = 2f;
+            if (_player != null)
+            {
+                targetY = _player.transform.position.y;
+            }
+            else
+            {
+                targetY = transform.position.y; // Si no hay jugador que quede en su posición actual
+            }
+            transform.position = new Vector2(10, targetY);
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +76,7 @@ public class enemigoScript : MonoBehaviour
         }
         else if (_enemigoID == 2)
         {
-            ;
+            transform.Translate(Vector2.left * 7f * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime);
         }
         else
         {

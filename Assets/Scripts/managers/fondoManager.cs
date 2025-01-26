@@ -27,7 +27,7 @@ public class fondoManager : MonoBehaviour
        // Mueve los fondos
         foreach (Transform background in backgrounds)
         {
-            background.position += Vector3.left * scrollSpeed * Time.deltaTime;
+            background.position += Vector3.left * scrollSpeed * GameManager.Instance.m_movementSpeedMultiplier * Time.deltaTime;
 
             // Reposicion cuando está fuera de la cámara
             if (background.position.x < -backgroundWidth)
