@@ -17,6 +17,10 @@ public class enemigoScript : MonoBehaviour
     private float targetY; // Posicion eje Y del jugador
     private float vertSpeed = 2f; // Velocidad de movimiento vertical
 
+    private bool atrapado = false;
+    [SerializeField]
+    private GameObject burbujaAtrapado;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,23 +104,59 @@ public class enemigoScript : MonoBehaviour
         }
     }
 
+    public void Borrar()
+    {
+        Destroy(gameObject);
+    }
+
+    public void AtraparEnBurbuja()
+    {
+        if (!atrapado)
+        {
+            atrapado = true;
+            Debug.Log("Enemigo atrapado en burbuja");
+            GameObject burbujaReemplazo = Instantiate(burbujaAtrapado, transform.position, Quaternion.identity);
+            burbujaReemplazo.GetComponent<burbu2script>().Configurar(this);
+            burbujaReemplazo.transform.localScale = new Vector2(5f, 5f);
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().simulated = false;
+            this.enabled = false;
+            transform.SetParent(burbujaReemplazo.transform);
+            transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            transform.localPosition = Vector3.zero;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Burbuja")) return;
-        Destroy(other.gameObject);
-        if (_player != null)
+        if (other.GetComponent<burbuscript>().esTrampa == false)
         {
-            _player.AddPuntos(50);
-        }
-        StartCoroutine(DamageFlicker());
-        _hpEnemigo -=1f;
-        if (_hpEnemigo <= 0)
-        {
+            Destroy(other.gameObject);
             if (_player != null)
             {
-                _player.AddPuntos(100);
+                _player.AddPuntos(50);
             }
-            Destroy(this.gameObject);
+            StartCoroutine(DamageFlicker());
+            _hpEnemigo -=1f;
+            if (_hpEnemigo <= 0)
+            {
+                if (_player != null)
+                {
+                 _player.AddPuntos(100);
+                }
+                Destroy(this.gameObject);
+            }
         }
+        else if (other.GetComponent<burbuscript>().esTrampa == true && other.GetComponent<burbuscript>()._carga >= 1 && _enemigoID != 0)
+        {
+            Destroy(other.gameObject);
+            AtraparEnBurbuja();
+        }
+        else if (other.GetComponent<burbuscript>().esTrampa == true && other.GetComponent<burbuscript>()._carga < 1)
+        {
+            Destroy(other.gameObject);
+        }
+        
     }
 }

@@ -6,6 +6,8 @@ public class burbuscript : MonoBehaviour
 {
     [SerializeField]
     private float _dispSpeed = 7f;
+    public bool esTrampa = false;
+    public float _carga;
     
     // Start is called before the first frame update
     void Start()

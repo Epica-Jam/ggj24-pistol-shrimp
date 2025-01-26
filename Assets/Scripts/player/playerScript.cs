@@ -27,11 +27,11 @@ public class playerScript : MonoBehaviour
 
     // ataque
 
-    //[SerializeField]
-    //private float tiempoCarga = 0f; // T0 de carga
-    //private bool cargando = false; // Bool de si esta cargando o no
-    //private float cargaMax = 2f; // carga maxima posible
-    //private float tamMax = 3f; // tamaño maximo de la burbuja cargada
+    [SerializeField]
+    private float tiempoCarga = 0f; // T0 de carga
+    private bool cargando = false; // Bool de si esta cargando o no
+    private float cargaMax = 2f; // carga maxima posible
+    private float tamMax = 3f; // tamaño maximo de la burbuja cargada
 
     // cooldowns
     [SerializeField]
@@ -66,9 +66,13 @@ public class playerScript : MonoBehaviour
 
     // audio
 
-    public AudioSource audioSource; // Referencia al AudioSource
+    [SerializeField]
+    private AudioSource sonidosSFX;
     public AudioClip sonidoDisparoLigero; // Sonido para el disparo ligero
     public AudioClip sonidoDmg; // Sonido al ser dañado
+
+
+    
     List<PowerUp> powerUps = new List<PowerUp>();
     // Start is called before the first frame update
     void Start()
@@ -113,29 +117,29 @@ public class playerScript : MonoBehaviour
         {
             tenaza.GetComponent<Animator>().SetBool("disparando", false);
         }
-        //if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
-        //{
-          //  cargando = true;
-            //tiempoCarga = 0f;
-        //}
+        if (Input.GetKeyDown(KeyCode.Mouse1) && PuedeDispararCargado()) // Disparo cargado, deteccion de que se empezo a cargar
+        {
+            cargando = true;
+            tiempoCarga = 0f;
+        }
 
-        //if (cargando && Input.GetKey(KeyCode.Mouse1)) // Carga del disparo cargado
-        //{
-         //   tiempoCarga += Time.deltaTime;
+        if (cargando && Input.GetKey(KeyCode.Mouse1)) // Carga del disparo cargado
+        {
+            tiempoCarga += Time.deltaTime;
 
-           // if (tiempoCarga > cargaMax)
-           // {
-             //   tiempoCarga = cargaMax;
-           // }
+            if (tiempoCarga > cargaMax)
+            {
+                tiempoCarga = cargaMax;
+            }
 
-        //}
+        }
 
-        //if (cargando && Input.GetKeyUp(KeyCode.Mouse1)) // Disparo de la burbuja cargada
-        //{
-            //cargando = false;
-            //burbuGrande();
-            //tiempoUltimoDisparoCargado = Time.time;
-        //}
+        if (cargando && Input.GetKeyUp(KeyCode.Mouse1)) // Disparo de la burbuja cargada
+        {
+            cargando = false;
+            burbuGrande();
+            tiempoUltimoDisparoCargado = Time.time;
+        }
 
         // Salto
 
@@ -186,18 +190,19 @@ public class playerScript : MonoBehaviour
     void burbuChica()
     {
         Instantiate(burbuCprefab, pistolaActualtrans.position, Quaternion.identity);
-        audioSource.PlayOneShot(sonidoDisparoLigero);
+        sonidosSFX.PlayOneShot(sonidoDisparoLigero);
     }
 
-    //void burbuGrande()
-    //{
-      //  GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
+    void burbuGrande()
+    {
+        GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
 
-       // float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga / cargaMax); // Interpolacion tamaños
+        float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga / cargaMax); // Interpolacion tamaños
 
-        //disparo.transform.localScale = new Vector2(escalado, escalado);
+        disparo.transform.localScale = new Vector2(escalado, escalado);
+        disparo.GetComponent<burbuscript>()._carga = tiempoCarga;
 
-    //}
+    }
 
     void Saltito()
     {
@@ -265,7 +270,7 @@ public class playerScript : MonoBehaviour
     {
         if (!invulnerable) // Solo recibe daño si no es invulnerable
         {
-            audioSource.PlayOneShot(sonidoDmg);
+            sonidosSFX.PlayOneShot(sonidoDmg);
             vidasJugador -= 1;
 
             Debug.Log("Daño recibido, vidas =" + vidasJugador);

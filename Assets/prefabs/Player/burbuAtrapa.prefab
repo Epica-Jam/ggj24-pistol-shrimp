@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3278035147281930536
+--- !u!1 &8808017569999571816
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5800239575353429556}
-  - component: {fileID: 8068648629410134179}
-  - component: {fileID: 7569981392497390019}
-  - component: {fileID: -5327461555073744998}
-  - component: {fileID: -8347521281511358350}
-  - component: {fileID: 8601080793806363231}
-  m_Layer: 0
-  m_Name: enmy_coral_prefab
-  m_TagString: Enemigo
+  - component: {fileID: 5768772063696208006}
+  - component: {fileID: 3891495810663850353}
+  - component: {fileID: 1273158058018865263}
+  - component: {fileID: 2001992464989443527}
+  - component: {fileID: 9080266927395030654}
+  - component: {fileID: -8377832883793078348}
+  m_Layer: 6
+  m_Name: burbuAtrapa
+  m_TagString: Burbuja
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5800239575353429556
+--- !u!4 &5768772063696208006
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278035147281930536}
+  m_GameObject: {fileID: 8808017569999571816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.8700533, y: 0.20164466, z: 0}
+  m_LocalScale: {x: 2.35, y: 2.35, z: 2.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8068648629410134179
+--- !u!212 &3891495810663850353
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278035147281930536}
+  m_GameObject: {fileID: 8808017569999571816}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,40 +76,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -758213713
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 509555724, guid: 812b65a498f62d64c9bf116b875ecaeb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 09d0bad2d83d38d4da06933c22dca153, type: 3}
+  m_Color: {r: 0.6567283, g: 0.6800851, b: 0.8867924, a: 0.74509805}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.75, y: 0.96875}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7569981392497390019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278035147281930536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f04f2db4933404d89c687a1dec26ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemigoID: 0
-  _hpEnemigo: 5
-  burbujaAtrapado: {fileID: 8808017569999571816, guid: 9943b181638bcd848ad28d774bb4fd97, type: 3}
---- !u!61 &-5327461555073744998
+--- !u!61 &1273158058018865263
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278035147281930536}
+  m_GameObject: {fileID: 8808017569999571816}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -135,28 +120,28 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.043097824, y: -0.011423588}
+  m_Offset: {x: 0.03587936, y: -0.042210996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 0.75, y: 0.96875}
+    oldSize: {x: 1, y: 0.8333333}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1194293, y: 1.5487022}
+  m_Size: {x: 0.60944676, y: 0.5887767}
   m_EdgeRadius: 0
---- !u!50 &-8347521281511358350
+--- !u!50 &2001992464989443527
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278035147281930536}
-  m_BodyType: 0
+  m_GameObject: {fileID: 8808017569999571816}
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -175,17 +160,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &8601080793806363231
+--- !u!95 &9080266927395030654
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278035147281930536}
+  m_GameObject: {fileID: 8808017569999571816}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffb7b107c46dcda43878be9396173aa3, type: 2}
+  m_Controller: {fileID: 9100000, guid: e1affeeee686e5c448c41c806d5301a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -196,3 +181,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8377832883793078348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808017569999571816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ab557c1cfa67e4b8f3789b3c983743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escalaMiniEnemy: 0.4
