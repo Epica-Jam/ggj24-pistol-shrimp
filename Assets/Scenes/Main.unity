@@ -273,7 +273,7 @@ MonoBehaviour:
   burbuCprefab: {fileID: 8911127080341655968, guid: b13e6767cb3f4614d9570228811e3245, type: 3}
   burbuGprefab: {fileID: 1978541748549156090, guid: a2454a95f6919c8459c3f90761cb891d, type: 3}
   sonidosSFX: {fileID: 1655723154}
-  sonidoDisparoLigero: {fileID: 8300000, guid: 52e4d56d6269b2b488994c4b8ae33a15, type: 3}
+  sonidoDisparoLigero: {fileID: 8300000, guid: c6ce3b8deea6d104c81a733be2bc7f72, type: 3}
   sonidoDmg: {fileID: 8300000, guid: a26bd60108d638b46ac6e5f9241fa5b9, type: 3}
   sonidoCargaDisparo: {fileID: 8300000, guid: 5471f087dcdd13046bf48a3ac4a25377, type: 3}
   sonidoDisparoCargado: {fileID: 8300000, guid: 5a582c96279556740bbcdebd1936c982, type: 3}
