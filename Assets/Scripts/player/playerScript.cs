@@ -70,7 +70,9 @@ public class playerScript : MonoBehaviour
     private AudioSource sonidosSFX;
     public AudioClip sonidoDisparoLigero; // Sonido para el disparo ligero
     public AudioClip sonidoDmg; // Sonido al ser dañado
-
+    public AudioClip sonidoCargaDisparo;
+    public AudioClip sonidoDisparoCargado;
+    public AudioClip popBurbuja;
 
     
     List<PowerUp> powerUps = new List<PowerUp>();
@@ -132,11 +134,16 @@ public class playerScript : MonoBehaviour
                 tiempoCarga = cargaMax;
             }
 
+            //sonidosSFX.PlayOneShot(sonidoCargaDisparo);
+            //sonidosSFX.loop = true;
+
         }
 
         if (cargando && Input.GetKeyUp(KeyCode.Mouse1) || Input.GetKeyUp(KeyCode.X)) // Disparo de la burbuja cargada
         {
             cargando = false;
+            //sonidosSFX.loop = false;
+            //sonidosSFX.Stop();
             burbuGrande();
             tiempoUltimoDisparoCargado = Time.time;
         }
@@ -198,6 +205,8 @@ public class playerScript : MonoBehaviour
         GameObject disparo = Instantiate(burbuGprefab, pistolaActualtrans.position, Quaternion.identity);
 
         float escalado = Mathf.Lerp(1f, tamMax, tiempoCarga / cargaMax); // Interpolacion tamaños
+
+        sonidosSFX.PlayOneShot(sonidoDisparoCargado);
 
         disparo.transform.localScale = new Vector2(escalado, escalado);
         disparo.GetComponent<burbuscript>()._carga = tiempoCarga;
@@ -336,5 +345,10 @@ public class playerScript : MonoBehaviour
         _puntaje += puntos;
         GameManager.Instance.AddPoints(puntos);
         _uiManager.UpdatePuntaje(GameManager.Instance.m_score);
+    }
+
+    public void MandarAudio(AudioClip audio)
+    {
+        sonidosSFX.PlayOneShot(audio);
     }
 }
