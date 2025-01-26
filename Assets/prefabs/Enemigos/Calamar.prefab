@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4ce9d1c0f70fc44bfbdbc9442db35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHp: 100
+  m_maxHp: 20
   m_idle: 0
   m_idleTime: 40.549896
   rootCollider: {fileID: 8805941569127517998}

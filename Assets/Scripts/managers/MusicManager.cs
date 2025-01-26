@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     AudioSource source;
     public AudioClip mainOst;
     public AudioClip gameOverOst;
+    public AudioClip creditsOst;
     private AudioLowPassFilter lowPassFilter;
 
     private void Awake()
@@ -27,9 +28,13 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
+    public void PlayCreditsOST()
+    {
+        source.clip = creditsOst;
+        source.Play();
+    }
     public void PlayMainOST()
     {
         source.clip = mainOst;

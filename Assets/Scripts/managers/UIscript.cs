@@ -26,6 +26,8 @@ public class UIscript : MonoBehaviour
     [SerializeField]
     private GameObject botonPausaGameOver;
 
+    public GameObject creditos;
+
     private void Awake()
     {
         if (Instance != null) return;
@@ -44,7 +46,11 @@ public class UIscript : MonoBehaviour
     {
 
     }
-
+    public void ShowCredits()
+    {
+        MusicManager.Instance.PlayCreditsOST();
+        creditos.SetActive(true);
+    }
     public void UpdateLevel()
     {
         _levelText.text = $"Nivel {GameManager.Instance.m_level}";

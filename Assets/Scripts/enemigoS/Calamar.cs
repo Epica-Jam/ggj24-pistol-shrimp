@@ -105,7 +105,7 @@ public class Calamar : MonoBehaviour
                 {
                     playerScript.Instance.AddPuntos(1000);
                 }
-                spawnerScript.Instance.SpawnStart();
+                UIscript.Instance.ShowCredits();
                 Destroy(this.gameObject);
             }
         }
