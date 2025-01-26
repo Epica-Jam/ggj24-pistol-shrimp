@@ -109,7 +109,7 @@ public class playerScript : MonoBehaviour
             burbuChica();
             tiempoUltimoDisparoLigero = Time.time;
         }
-        else 
+        else
         {
             tenaza.GetComponent<Animator>().SetBool("disparando", false);
         }
