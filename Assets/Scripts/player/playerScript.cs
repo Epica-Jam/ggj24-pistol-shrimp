@@ -274,6 +274,7 @@ public class playerScript : MonoBehaviour
             {
                 // Lógica de Game Over
                 Debug.Log("¡Game Over!");
+                GameManager.Instance.GameOver();
                 Destroy(this);
             }
             else

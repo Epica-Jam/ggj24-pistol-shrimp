@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public AnimationCurve m_experienceCurve;
+    public bool m_gameOver = false;
     public int m_level = 1;
     public float m_gameTime = 0f;
     public int m_score = 0;
@@ -41,5 +42,10 @@ public class GameManager : MonoBehaviour
         spawnerScript.Instance.intervaloSpawnObjetos -= 0.2f;
         spawnerScript.Instance.intervaloSpawnEnemigos -= 0.2f;
         UIscript.Instance.UpdateLevel();
+    }
+
+    public void GameOver()
+    {
+        MusicManager.Instance.PlayGameOverOST();
     }
 }
