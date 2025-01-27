@@ -114,7 +114,6 @@ public class enemigoScript : MonoBehaviour
         if (!atrapado)
         {
             atrapado = true;
-            Debug.Log("Enemigo atrapado en burbuja");
             GameObject burbujaReemplazo = Instantiate(burbujaAtrapado, transform.position, Quaternion.identity);
             burbujaReemplazo.GetComponent<burbu2script>().Configurar(this);
             burbujaReemplazo.transform.localScale = new Vector2(5f, 5f);

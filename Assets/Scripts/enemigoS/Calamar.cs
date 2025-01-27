@@ -22,12 +22,16 @@ public class Calamar : MonoBehaviour
     public int colliderStep = 0;
     AttackType m_lastAttack = AttackType.None;
 
+    public GameObject musica;
+
     void Start()
     {
         spawnerScript.Instance.StopSpawning();
         m_hp = m_maxHp;
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        musica = GameObject.Find("MusicManager");
+        musica.GetComponent<MusicManager>().PlayBossOST();
     }
 
     // Update is called once per frame

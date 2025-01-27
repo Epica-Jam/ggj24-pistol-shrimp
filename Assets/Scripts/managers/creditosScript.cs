@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
 
@@ -7,12 +8,20 @@ public class creditosScript : MonoBehaviour
     [SerializeField] private GameObject background;
     [SerializeField] private TMP_Text[] textGroups;
     [SerializeField] private GameObject finalObjects;
+    [SerializeField] private GameObject puntos;
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private float displayDuration = 2f;
+    [SerializeField] private MusicManager musicManager;
+    [SerializeField] private GameObject NivelGameWon;
+    [SerializeField] private GameObject pausaGameWon;
 
     private void Start()
     {
+        puntos.transform.position = new UnityEngine.Vector2(10,10);
+        NivelGameWon.SetActive(false);
+        pausaGameWon.SetActive(false);
         StartCoroutine(PlayCredits());
+        musicManager.PlayCreditsOST();
     }
 
     private IEnumerator PlayCredits()
@@ -27,7 +36,7 @@ public class creditosScript : MonoBehaviour
             yield return StartCoroutine(FadeOutText(text));
         }
 
-        
+        puntos.transform.position = new UnityEngine.Vector2(-6.8166f,-1.8f);
         finalObjects.SetActive(true);
     }
 

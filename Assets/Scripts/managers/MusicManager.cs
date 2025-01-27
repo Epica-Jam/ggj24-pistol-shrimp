@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip mainOst;
     public AudioClip gameOverOst;
     public AudioClip creditsOst;
+    public AudioClip bossOst;
     private AudioLowPassFilter lowPassFilter;
 
     private void Awake()
@@ -44,6 +45,12 @@ public class MusicManager : MonoBehaviour
     public void PlayGameOverOST()
     {
         source.clip = gameOverOst;
+        source.Play();
+    }
+
+    public void PlayBossOST()
+    {
+        source.clip = bossOst;
         source.Play();
     }
 

@@ -1419,8 +1419,12 @@ MonoBehaviour:
   - {fileID: 504950111}
   - {fileID: 209704369}
   finalObjects: {fileID: 1184163697}
+  puntos: {fileID: 173122587}
   fadeDuration: 1
   displayDuration: 2
+  musicManager: {fileID: 1085368633}
+  NivelGameWon: {fileID: 507751590}
+  pausaGameWon: {fileID: 1415810973}
 --- !u!1 &504950109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,8 +1635,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nivel 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
+  m_sharedMaterial: {fileID: -4277308333746581375, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1656,8 +1660,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1920,8 +1924,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
+  m_sharedMaterial: {fileID: -4277308333746581375, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3289,7 +3293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainOst: {fileID: 8300000, guid: 8d67ad74e26697147be51bc7edb64aa2, type: 3}
   gameOverOst: {fileID: 8300000, guid: bd9cc4c1f089f6349a5090d717734ab2, type: 3}
-  creditsOst: {fileID: 0}
+  creditsOst: {fileID: 8300000, guid: 6163fe8497cd0464d84df4e0f035dda1, type: 3}
+  bossOst: {fileID: 8300000, guid: 5b29429e6de57b24888130cf2e173ecc, type: 3}
 --- !u!4 &1085368634
 Transform:
   m_ObjectHideFlags: 0
@@ -5585,8 +5590,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Puntos
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1f11c81053336264aaf932a197b7c215, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
+  m_sharedMaterial: {fileID: -4277308333746581375, guid: 08f27a2f16d85644281d73f98eb828c0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
